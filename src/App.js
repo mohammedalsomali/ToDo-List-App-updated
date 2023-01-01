@@ -4,20 +4,9 @@ import { useEffect, useRef, useState } from "react";
 
 function App() {
   const currentinput = useRef()
-  const [Todo , SetTodos] = useState([ {id: 123, name: "first todo"}])
+  const [Todo , SetTodos] = useState(['nigga'])
 
-  const AddTodos = () => {
-    if(currentinput.current.value != ''){
-      const name = currentinput.current.value
-      SetTodos(oldtodo => {
-        return [...oldtodo, { id: 456, name: name}]})
-    }
-      
-    currentinput.current.value = null
-    
-   
-    
-  }
+  
 
   
 
@@ -26,8 +15,7 @@ function App() {
   return (
     <>
       
-      <input ref={currentinput} type="text" id="todo" />
-      <input type="submit"  value="Submit" onClick={AddTodos}/>
+      <button className="Addbtn" />
       <List_Creation todos={Todo} />
       
     </>
