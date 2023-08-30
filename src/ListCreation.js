@@ -3,8 +3,10 @@ import Todos from './Todos'
 export default function ListCreation({ todos }) {
   return (
     
+
+    
     todos.map(todo => {
-      return <Todos todo={todo.name} />
+      return <Todos todo= {todo} Key={todo.id} />
     })    
     
   )
