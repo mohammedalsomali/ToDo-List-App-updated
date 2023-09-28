@@ -1,6 +1,23 @@
-html, body {
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: azure;
+}
+
+.sideNav{
     height: 100%;
-    width: 100%;
-    background-color: azure;
+    width: 25%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #232323;
+    transition: 0.5s ease;
+    overflow-x: hidden;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
