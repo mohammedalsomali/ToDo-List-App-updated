@@ -7,7 +7,7 @@ function App(props, state) {
   
   return (
     <div className="container">
-      <SideNav =  />
+      <SideNav />
     </div>
     
   )
