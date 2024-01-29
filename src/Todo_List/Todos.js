@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Todos( { todo }) {
+export default function Todos() {
   return (
-    <div key={todo.id}>
-        {todo.title}
+    <div >
+        
     </div>
   )
 }
