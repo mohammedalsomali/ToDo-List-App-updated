@@ -5,6 +5,10 @@ body {
   
 }
 
+#root {
+  height: 100vh;
+}
+
 /* .sideNav{
     height: 100%;
     width: 25%;
