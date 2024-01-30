@@ -4,3 +4,25 @@
     
     color: red;
 }
+
+
+.Container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    
+}
+
+
+
+
+
+
+.contentPage {
+    background-color: bisque;
+}
+
+
+.nav {
+    background-color: azure;
+}
