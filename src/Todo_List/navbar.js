@@ -23,8 +23,8 @@ export default function Navb() {
       </ul>
       <form>
         <label>
-          Enter your name:
-          <input type="text" />
+          
+          <input type="text" placeholder="Enter your name:"/>
         </label>
       </form>
     </nav>
