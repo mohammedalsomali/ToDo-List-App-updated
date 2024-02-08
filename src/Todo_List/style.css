@@ -9,7 +9,7 @@
 .Container {
     height: 100vh;
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 15% 70%;
     
 }
 
@@ -18,13 +18,17 @@
 
 .contentPage {
     background-color: bisque;
+    padding: 5%;
+    
 }
 
 
 .nav {
     background-color: yellow;
     align-content: right;
-    
+    font-size: larger;
+    padding: 10%;
+    text-decoration: double;
 }
 
 .calendar {
@@ -32,6 +36,16 @@
     width: 100%;
 }
 
+
+
 button {
-    background-color: blue;
+    border-radius: 2%;
+    padding: 2%;
+    
+    
+}
+
+
+abbr {
+    text-size-adjust: 50px;
 }

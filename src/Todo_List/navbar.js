@@ -3,7 +3,14 @@ import React from "react";
 export default function Navb() {
   return (
     <nav className="nav">
+      <form>
+        <label>
+          
+          <input type="text" placeholder="Enter your name:"/>
+        </label>
+      </form>
       <ul>
+        
         <li className="navItem">
           {" "}
           <a href="#"> Calender </a>{" "}
@@ -21,12 +28,7 @@ export default function Navb() {
           <a href="#"> Customize </a>{" "}
         </li>
       </ul>
-      <form>
-        <label>
-          
-          <input type="text" placeholder="Enter your name:"/>
-        </label>
-      </form>
+      
     </nav>
   );
 }
