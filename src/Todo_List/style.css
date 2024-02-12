@@ -1,8 +1,8 @@
-.homeContainer {
+/* .homeContainer {
     width: 100px;
     height: 100px;
-    color: red;
-}
+    background-color: black;
+} */
 
 
 .Container {
@@ -18,7 +18,7 @@
 
 .contentPage {
     background-color: bisque;
-    /* padding: 5%; */
+    
     
 }
 
@@ -35,23 +35,17 @@
     margin: 10%;
     height: 85%;
     width: 85%;
-
+    
+    
+    
 }
 
 
 
-
-
-
-abbr {
-    text-size-adjust: 50px;
-}
-
-.react-calendar {
-    align-items: stretch;
-    -ms-flex-item-align: stretch;
+.react-calendar__viewContainer {
+    background-color: bisque;
 }
 
 .react-calendar__tile {
-    min-height: 50px;
+    height: 13vh;
 }
