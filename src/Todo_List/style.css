@@ -1,7 +1,6 @@
 .homeContainer {
     width: 100px;
     height: 100px;
-    
     color: red;
 }
 
@@ -10,6 +9,7 @@
     height: 100vh;
     display: grid;
     grid-template-columns: 20% 80%;
+    overflow: hidden;
     
 }
 
@@ -18,7 +18,7 @@
 
 .contentPage {
     background-color: bisque;
-    padding: 5%;
+    /* padding: 5%; */
     
 }
 
@@ -47,11 +47,11 @@ abbr {
     text-size-adjust: 50px;
 }
 
-/* button {
-    max-height: 100%;
-    min-height: 25%;
-} */
+.react-calendar {
+    align-items: stretch;
+    -ms-flex-item-align: stretch;
+}
 
 .react-calendar__tile {
-    height: auto;
+    min-height: 50px;
 }
