@@ -1,0 +1,47 @@
+
+
+.Container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    
+    
+}
+
+
+
+
+.contentPage {
+    background-color: black;
+  
+    
+    
+}
+
+
+.nav {
+    background-color: yellow;
+    align-content: right;
+    font-size: larger;
+    padding: 10%;
+    
+}
+
+.calendar {
+    
+    height: 100%;
+    width: 100%;
+    /* border-color: lightblue; */
+     
+}
+
+
+
+
+.react-calendar__tile {
+    height: 17.9vh;
+   
+    
+}
+
+
