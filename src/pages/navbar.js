@@ -5,27 +5,28 @@ export default function Navb() {
     <nav className="nav">
       <form>
         <label>
+        <input type="search"></input>
+          <input type="submit"></input>
           
-          <input type="text" placeholder="Enter your name:"/>
         </label>
       </form>
       <ul>
         
         <li className="navItem">
-          {" "}
-          <a href="#"> Calender </a>{" "}
+          
+          <a href="#"> Calender </a>
         </li>
         <li className="navItem">
-          {" "}
-          <a href="#"> Todo List </a>{" "}
+        
+          <a href="#"> Todo List </a>
         </li>
         <li className="navItem">
-          {" "}
-          <a href="#"> Trash</a>{" "}
+          
+          <a href="#"> Trash</a>
         </li>
         <li className="navItem">
-          {" "}
-          <a href="#"> Customize </a>{" "}
+         
+          <a href="#"> Customize </a>
         </li>
       </ul>
       
