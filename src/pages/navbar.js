@@ -6,7 +6,7 @@ export default function Navb() {
       <form>
         <label>
         <input type="search"></input>
-          <input type="submit"></input>
+        <button type="submit"></button>
           
         </label>
       </form>

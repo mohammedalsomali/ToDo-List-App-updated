@@ -2,7 +2,8 @@
 
 .Container {
     height: 100vh;
-    display: block;
+    display: flex;
+    flex-direction: column;
     
     
     
@@ -24,10 +25,11 @@
 }
 
 .calendar {
-    height: 100%;
-    width: 100%;
+    width: 100%; 
     background: linear-gradient(#07302a, #00d4ff);
     border: none;
+    display: flex;
+    flex-direction: column;
     
      
 }
@@ -40,10 +42,11 @@
    
     
 }
-
+/* #remove the input color and make it blend in with the background */
 
 input {
     padding: 12px;
+    border-radius: 25px;
 }
 
 ul {

@@ -1,0 +1,7 @@
+.todo {
+    position: fixed;
+    opacity: 30;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    
+}
