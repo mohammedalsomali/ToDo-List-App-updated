@@ -16,40 +16,61 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: seashell;
+    background-color: darkslategrey;
 
 }
 
 
 .createTodoBtn {
     width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    height: 30px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 2s;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-size: 13px;
+    transition: background-color 2s ease-out;
+    
     
 
     
 }
 
-.createTodoBtn:hover {
-    transform: rotate(225deg);
+button:hover {
+    background-color: rgb(0, 255, 98);
+    color: rgb(135, 136, 222);
+    cursor: pointer;
 }
 
 
 
-a {
+/* a {
     pointer-events: none;
     font-size: 9cap;
-    color: aliceblue;
+    font-size: 13px;
+    color: rgb(10, 117, 211);
    
     
-}
+} */
 
 form {
     display: flex;
+}
+
+.TodoSubject {
+    width: 200px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    text-align: center;
+    background-color: ;
+    
+}
+
+.trash {
+    bottom:30px;
+    right: 30px;
+    position: absolute;
 }
 
 
