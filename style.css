@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: darkslategrey;
+    background-image: linear-gradient(100deg, #001214, #001f29);
 
 }
 
@@ -24,6 +24,7 @@ body {
 .createTodoBtn {
     width: 50px;
     height: 30px; 
+    background-color: #002837;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,32 +39,31 @@ body {
 }
 
 button:hover {
-    background-color: rgb(0, 255, 98);
+    background-color: #001f29;
     color: rgb(135, 136, 222);
     cursor: pointer;
 }
 
 
 
-/* a {
-    pointer-events: none;
-    font-size: 9cap;
-    font-size: 13px;
-    color: rgb(10, 117, 211);
-   
-    
-} */
 
-form {
+.startForm {
     display: flex;
 }
 
+
+.Todos {
+    display: flex;
+    justify-content: center;
+}
+
 .TodoSubject {
-    width: 200px;
+    width: 300px;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     text-align: center;
-    background-color: ;
+    background-color: #01394c;
+
     
 }
 
@@ -74,6 +74,42 @@ form {
 }
 
 
+.TodoForm {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 350px;
+    
+}
+
+
+.TodoForm input {
+    margin: 10px;
+}
 
 
 
+.TodoForm label {
+    margin: 5px;
+    color: rgb(96, 122, 34);
+}
+
+
+.emailHover {
+    visibility: hidden;
+    width: 150px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    left: 25%;
+
+}
+
+.emailLabel:hover .emailHover{
+    visibility: visible;
+}

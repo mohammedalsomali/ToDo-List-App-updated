@@ -8,7 +8,7 @@
 </head>
 <body>
     <div> 
-        <form action="index.html">
+        <form class="startForm">
             
             <input class="TodoSubject" type="text" placeholder="Add a ew Todo">
              <!-- this is the button used to create new Todos -->
@@ -20,7 +20,17 @@
         
         <!-- this the a table of the list of todos in the queue -->
         <div class="Todos">
-
+            <form class="TodoForm">
+                <label for="TodoForm"><h1>To Do Item</h1></label>
+                <label for="text"> <b> Subject </b> </label>
+                <input type="text">
+                <label for="text"> <b> Discription </b> </label>
+                <input type="text">
+                <label class="emailLabel" for="email" > <span class="emailHover"> a calender event will be sent to this email for this to ToDo </span><b>Email</b> </label>
+                <input type="email">
+                <label for="date"> <b> Due Date </b> </label>
+                <input type="date">
+            </form>
         </div>
     </div>
     <div class="trash">
