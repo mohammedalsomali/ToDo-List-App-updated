@@ -38,13 +38,16 @@ body {
     
 }
 
-button:hover {
+.createTodoBtn:hover {
     background-color: #001f29;
     color: rgb(135, 136, 222);
     cursor: pointer;
 }
 
-
+.createTodoBtn:active {
+    background-color: red;
+    
+}
 
 
 .startForm {
@@ -58,6 +61,7 @@ button:hover {
 .Todos {
     display: flex;
     justify-content: center;
+
 }
 
 .TodoSubject {
@@ -85,8 +89,7 @@ button:hover {
 .TodoForm {
     display: flex;
     flex-direction: column;
-    width: 200px;
-    height: 350px;
+    position: relative;
     
 }
 
@@ -100,7 +103,7 @@ button:hover {
     border-bottom-right-radius: 15px;
     text-align: center;
     background-color: #01394c;
-    box-shadow: none;
+
 }
 
 
@@ -118,15 +121,23 @@ button:hover {
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 5px 0;
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-    left: 25%;
+    position: absolute; 
+    bottom: 30px;
+    
 
+
+}
+
+
+.emailLabel {
+    position: relative;
+    
 }
 
 .emailLabel:hover .emailHover{
     visibility: visible;
+    
+    
 }
+
 
