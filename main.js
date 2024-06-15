@@ -1,21 +1,16 @@
-var createBtn;
-var TodoSubject;
-var startForm;
+
+var TodoSubject = document.getElementsByClassName('TodoSubject');
+var startForm = document.getElementsByClassName('startForm');
 
 window.onload = function () {
     
-    createBtn = document.getElementsByClassName('.createTodoBtn');
-    TodoSubject = document.getElementsByClassName('TodoSubject');
-    startForm = document.getElementsByClassName('startForm');
-    startForm.onSubmit = () => {
-        
-        createBtn.style.backgroundColor = 'blue';
-        console.log('banana');
-        // e.preventDefault();
-    };
+    document.querySelector('.startTodoBtn').addEventListener('click', openForm);
+    
+    
 } 
 
 function openForm (){
-    createBtn.style.backgroundColor = 'blue';
+    document.querySelector('.startForm').style.display = 'none';
+    document.querySelector('.TodoForm').style.display = 'flex';
 }
 

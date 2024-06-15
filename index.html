@@ -7,20 +7,35 @@
     <title>Document</title>
 </head>
 <body>
-    <div> 
-        <form class="startForm" onsubmit="">
+    <div class="pageContainer"> 
+        <div class="startForm" onsubmit="">
             
             <input class="TodoSubject" type="text" placeholder="Add a ew Todo">
              <!-- this is the button used to create new Todos -->
-            <button class="createTodoBtn" type="button"> 
+            <button class="startTodoBtn" type="submit"> 
                 <!-- create to do button sign -->
                 Create
             </button>   
+        </div>
+        <form class="TodoForm">
+            <label for="TodoForm"><h1>Calender Event</h1></label>
+            <label for="text"> <b> Subject </b> </label>
+            <input type="text">
+            <label for="text"> <b> Discription </b> </label>
+            <input type="text">
+            <label class="emailLabel" for="email" > <span class="emailHover"> a calender event will be sent to this email for this to ToDo </span><b>Email</b> </label>
+            <input type="email">
+            <label for="date"> <b> Due Date </b> </label>
+            <input type="date">
+            <div class="submitContainer">
+                <button type="submit"> Submit </button>
+                <button type="button"> Cancel </button>
+            </div>
         </form>
         
         <!-- this the a table of the list of todos in the queue -->
         <div class="Todos">
-            <form class="TodoForm">
+            <!-- <form class="TodoForm">
                 <label for="TodoForm"><h1>Calender Event</h1></label>
                 <label for="text"> <b> Subject </b> </label>
                 <input type="text">
@@ -30,7 +45,11 @@
                 <input type="email">
                 <label for="date"> <b> Due Date </b> </label>
                 <input type="date">
-            </form>
+                <div class="submitContainer">
+                    <button type="submit"> Submit </button>
+                    <button type="button"> Cancel </button>
+                </div>
+            </form> -->
         </div>
     </div>
     <div class="trash">

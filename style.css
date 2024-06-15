@@ -20,8 +20,14 @@ body {
 
 }
 
+.pageContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
-.createTodoBtn {
+
+.startTodoBtn {
     width: 50px;
     height: 30px; 
     background-color: #002837;
@@ -38,13 +44,13 @@ body {
     
 }
 
-.createTodoBtn:hover {
+.startTodoBtn:hover {
     background-color: #001f29;
     color: rgb(135, 136, 222);
     cursor: pointer;
 }
 
-.createTodoBtn:active {
+.startTodoBtn:active {
     background-color: red;
     
 }
@@ -87,9 +93,10 @@ body {
 
 
 .TodoForm {
-    display: flex;
+    display: none;
     flex-direction: column;
     position: relative;
+    
     
 }
 
@@ -138,6 +145,11 @@ body {
     visibility: visible;
     
     
+}
+
+.submitContainer {
+    display: flex;
+    justify-content: space-around;
 }
 
 
