@@ -1,6 +1,11 @@
 
-var TodoSubject = document.getElementsByClassName('TodoSubject');
-var startForm = document.getElementsByClassName('startForm');
+var todoSubject = document.querySelector('.TodoSubject');
+var startForm = document.querySelector('.startForm');
+var todoForm = document.querySelector('.TodoForm');
+var formSubject = document.querySelector('.subject');
+var todoDiscription= document.querySelector('.discription');
+var userEmail = document.querySelector('.email');
+var dueDate = document.querySelector('.dueDate');
 
 window.onload = function () {
     
@@ -10,7 +15,14 @@ window.onload = function () {
 } 
 
 function openForm (){
-    document.querySelector('.startForm').style.display = 'none';
-    document.querySelector('.TodoForm').style.display = 'flex';
+    startForm.style.display = 'none';
+
+    formSubject.value = todoSubject.value;
+    todoForm.classList.toggle("showing");
+
+
+
+    
+    
 }
 

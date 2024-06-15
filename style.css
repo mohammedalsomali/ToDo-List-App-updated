@@ -46,7 +46,7 @@ body {
 
 .startTodoBtn:hover {
     background-color: #001f29;
-    color: rgb(135, 136, 222);
+    color: aqua;
     cursor: pointer;
 }
 
@@ -75,6 +75,7 @@ body {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     text-align: center;
+    color: aqua;
     background-color: #01394c;
     box-shadow: none;
 
@@ -96,10 +97,26 @@ body {
     display: none;
     flex-direction: column;
     position: relative;
+    opacity:0;
+    transition:
+        opacity 1s,
+        display 1s allow-discrete;
     
     
 }
 
+
+.showing {
+    opacity: 1;
+    display: flex;
+
+}
+
+@starting-style {
+    .showing {
+        opacity: 0;
+    }
+  }
 
 .TodoForm input {
     margin: 10px;
@@ -110,6 +127,7 @@ body {
     border-bottom-right-radius: 15px;
     text-align: center;
     background-color: #01394c;
+    color: aqua;
 
 }
 
