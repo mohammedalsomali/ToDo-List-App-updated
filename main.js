@@ -8,6 +8,8 @@ var userEmail = document.querySelector('.email');
 var dueDate = document.querySelector('.dueDate');
 
 window.onload = function () {
+
+    e.preventDefault();
     
     document.querySelector('.startTodoBtn').addEventListener('click', openForm);
     
@@ -15,14 +17,21 @@ window.onload = function () {
 } 
 
 function openForm (){
-    startForm.style.display = 'none';
+    startForm.style.visibility = 'hidden';
+    startForm.style.opacity = 0;
+    startForm.style.height = '0px';
+    startForm.style.width = '0px';
+    
+
 
     formSubject.value = todoSubject.value;
-    todoForm.classList.toggle("showing");
 
 
+    todoForm.style.height = '420px';
+    todoForm.style.width = '220px';
+    todoForm.style.visibility = 'visible';
+    todoForm.style.opacity = 1;
 
-    
     
 }
 

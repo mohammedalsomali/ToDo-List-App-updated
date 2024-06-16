@@ -58,6 +58,14 @@ body {
 
 .startForm {
     display: flex;
+    transition:
+        height 1s,
+        width 1s,
+        visibility 0.3s linear,
+        opacity 0.3s linear;
+    visibility: visible;
+    opacity: 1;
+
 
 }
 
@@ -94,29 +102,23 @@ body {
 
 
 .TodoForm {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: relative;
-    opacity:0;
+    height: 0px;
+    width: 0px;
     transition:
-        opacity 1s,
-        display 1s allow-discrete;
-    
+        height 1s,
+        width 1s,
+        visibility 1s linear,
+        opacity 1s linear;
+    visibility: hidden;
+    opacity: 0;
     
 }
 
 
-.showing {
-    opacity: 1;
-    display: flex;
 
-}
-
-@starting-style {
-    .showing {
-        opacity: 0;
-    }
-  }
 
 .TodoForm input {
     margin: 10px;
