@@ -106,12 +106,9 @@ body {
     flex-direction: column;
     position: relative;
     height: 0px;
-    width: 0px;
+    width: 230px;
     transition:
-        height 1s,
-        width 1s,
-        visibility 1s linear,
-        opacity 1s linear;
+        height 1s;
     visibility: hidden;
     opacity: 0;
     

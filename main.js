@@ -8,8 +8,6 @@ var userEmail = document.querySelector('.email');
 var dueDate = document.querySelector('.dueDate');
 
 window.onload = function () {
-
-    e.preventDefault();
     
     document.querySelector('.startTodoBtn').addEventListener('click', openForm);
     
@@ -28,7 +26,7 @@ function openForm (){
 
 
     todoForm.style.height = '420px';
-    todoForm.style.width = '220px';
+    // todoForm.style.width = '220px';
     todoForm.style.visibility = 'visible';
     todoForm.style.opacity = 1;
 
