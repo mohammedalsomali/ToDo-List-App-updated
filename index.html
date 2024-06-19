@@ -18,39 +18,29 @@
             </button>   
         </div>
         <form class="TodoForm">
-            <!-- <label for="TodoForm"><h1>Calender Event</h1></label> -->
+            <label for="TodoForm"><h1>Calender Event</h1></label>
+            
             <label for="text"> <b> Subject </b> </label>
             <input class="subject" type="text">
+
             <label for="text"> <b> Discription </b> </label>
             <input class="discription" type="text">
+        
+            <label class="emailLabel" for="email" > <span class="emailHover"> a calender event will be sent to this email for this to ToDo </span><b>Email</b> </label>
+            <input class="email" type="email" value="test">
+
             <label for="date"> <b> Due Date </b> </label>
             <input class="dueDate" type="date">
-            <label class="emailLabel" for="email" > <span class="emailHover"> a calender event will be sent to this email for this to ToDo </span><b>Email</b> </label>
-            <input class="email" type="email">
-            
+
             <div class="submitContainer">
                 <button type="submit"> Submit </button>
-                <button type="button"> Cancel </button>
+                <button class="cancelBtn" type="button" href="#"> </button>
             </div>
         </form>
         
         <!-- this the a table of the list of todos in the queue -->
         <div class="Todos">
-            <!-- <form class="TodoForm">
-                <label for="TodoForm"><h1>Calender Event</h1></label>
-                <label for="text"> <b> Subject </b> </label>
-                <input type="text">
-                <label for="text"> <b> Discription </b> </label>
-                <input type="text">
-                <label class="emailLabel" for="email" > <span class="emailHover"> a calender event will be sent to this email for this to ToDo </span><b>Email</b> </label>
-                <input type="email">
-                <label for="date"> <b> Due Date </b> </label>
-                <input type="date">
-                <div class="submitContainer">
-                    <button type="submit"> Submit </button>
-                    <button type="button"> Cancel </button>
-                </div>
-            </form> -->
+    
         </div>
     </div>
     <div class="trash">

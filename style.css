@@ -104,15 +104,16 @@ body {
 .TodoForm {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     position: relative;
     height: 0px;
     width: 230px;
     transition:
         height 1s;
-    visibility: hidden;
-    opacity: 0;
-    
+
 }
+
+
 
 
 
@@ -166,7 +167,12 @@ body {
 
 .submitContainer {
     display: flex;
+    flex-direction: column 1fr 1fr;
     justify-content: space-around;
 }
+.cancelBtn {
+    
+    background: url('x.svg') no-repeat left center;
+    width: 50%;
 
-
+}

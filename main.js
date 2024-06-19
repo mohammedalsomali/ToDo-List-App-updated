@@ -26,9 +26,7 @@ function openForm (){
 
 
     todoForm.style.height = '420px';
-    // todoForm.style.width = '220px';
-    todoForm.style.visibility = 'visible';
-    todoForm.style.opacity = 1;
+    
 
     
 }
