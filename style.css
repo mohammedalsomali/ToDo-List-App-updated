@@ -98,6 +98,7 @@ body {
     bottom:30px;
     right: 30px;
     position: absolute;
+    
 }
 
 
@@ -167,12 +168,21 @@ body {
 
 .submitContainer {
     display: flex;
-    flex-direction: column 1fr 1fr;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    align-items: center;
+    border: 10px;
 }
-.cancelBtn {
-    
-    background: url('x.svg') no-repeat left center;
-    width: 50%;
 
+.cancelBtn {
+    background-color: transparent;
+
+}
+
+.cancelBtnIcon {
+    width: 30px;
+}
+
+.submit:hover i {
+    color: blue ;
 }

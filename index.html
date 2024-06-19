@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Include Bootstrap Icons library -->
+    <link href=
+        "https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" 
+        rel="stylesheet" />
     <title>Document</title>
 </head>
 <body>
@@ -33,8 +37,8 @@
             <input class="dueDate" type="date">
 
             <div class="submitContainer">
-                <button type="submit"> Submit </button>
-                <button class="cancelBtn" type="button" href="#"> </button>
+                <button type="submit" class="submit"> <i class="bi bi-trash-fill"></i> </button>
+                <button class="cancelBtn" type="button"> <img src="cancelBtn.png" alt="cancel" class="cancelBtnIcon">  </button>
             </div>
         </form>
         
@@ -44,7 +48,8 @@
         </div>
     </div>
     <div class="trash">
-        trash can 
+        <button type="button" class="btn-close" disabled aria-label="Close"></button>
+        
     </div>
 </body>
 
