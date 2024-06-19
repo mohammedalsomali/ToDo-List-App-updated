@@ -28,8 +28,7 @@ body {
 
 
 .startTodoBtn {
-    width: 50px;
-    height: 30px; 
+    width: 25vw;
     background-color: #002837;
     display: flex;
     justify-content: center;
@@ -58,6 +57,7 @@ body {
 
 .startForm {
     display: flex;
+    height: 40px;
     transition:
         height 1s,
         width 1s,
@@ -70,6 +70,27 @@ body {
 }
 
 
+@media (max-width: 600px) {
+    .startForm {
+        flex-direction: column;
+        align-items: center;
+        height: 80px;
+        
+    }
+
+    .TodoSubject {
+        height: 35px;
+        border-radius: 15px;
+    }
+
+    .startTodoBtn {
+        margin-top: 10px;
+        height: 35px;
+        border-radius: 15px;
+    }
+  }
+
+
 
 
 .Todos {
@@ -79,7 +100,7 @@ body {
 }
 
 .TodoSubject {
-    width: 300px;
+    width: 45vw;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     text-align: center;
@@ -171,18 +192,32 @@ body {
     justify-content: space-evenly;
     flex-wrap: nowrap;
     align-items: center;
-    border: 10px;
+    
+
 }
+
+.submit {
+    background-color: transparent;
+}
+
+.submit h1 {
+    color: aqua;
+}
+
+.submit:hover h1 {
+    color: limegreen;
+    
+}
+
 
 .cancelBtn {
     background-color: transparent;
-
 }
 
-.cancelBtnIcon {
-    width: 30px;
+.cancelBtn h1 {
+    color: aqua;
 }
 
-.submit:hover i {
-    color: blue ;
+.cancelBtn:hover h1 {
+    color: red;
 }
