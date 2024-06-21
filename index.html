@@ -22,24 +22,24 @@
             </button>   
         </div>
         <form class="TodoForm">
-            <label for="TodoForm"><h1>Calender Event</h1></label>
+            <label for="TodoForm"><h1>To Do</h1></label>
             
-            <label for="text"> <b> Subject </b> </label>
+            <label for="text">Subject</label>
             <input class="subject" type="text">
 
-            <label for="text"> <b> Discription </b> </label>
-            <input class="discription" type="text">
+            <label for="text" > Discription</label>
+            <input class="discription" type="text" placeholder="descripe this to do">
         
             <label class="emailLabel" for="email" > 
                 <span class="emailHover"> 
                     a calender event will be sent to this email for this to ToDo 
                 </span>
-                <b>Email</b> 
+                Email
             </label>
             
-            <input class="email" type="email" value="test">
+            <input class="email" type="email" placeholder="example@example.example">
 
-            <label for="date"> <b> Due Date </b> </label>
+            <label for="date">Due Date</label>
             <input class="dueDate" type="date">
 
             <div class="submitContainer">
@@ -57,11 +57,21 @@
         <div class="Todos">
     
         </div>
-    </div>
-    <div class="trash">
-        <button type="button" class="btn-close" disabled aria-label="Close"></button>
+
+        <div class="trash">
         
+        
+        </div>
+
+        <button type="button" class="trashBtn">
+            <h1 class="bi bi-trash" ></h1> 
+            <!-- if trash full then use below Icon  -->
+            <!-- <i class="bi bi-trash-fill"></i> -->
+        </button>
     </div>
+    
+
+    
 </body>
 
 <script src="main.js">

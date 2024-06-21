@@ -24,6 +24,9 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -115,11 +118,16 @@ body {
     outline: none;
 }
 
-.trash {
+.trashBtn {
     bottom:30px;
     right: 30px;
     position: absolute;
+    background-color: transparent;
     
+}
+
+.trashBtn:hover h1 {
+    color: aqua;
 }
 
 
@@ -129,7 +137,7 @@ body {
     overflow: hidden;
     position: relative;
     height: 0px;
-    width: 230px;
+
     transition:
         height 1s;
 
@@ -141,8 +149,6 @@ body {
 
 
 .TodoForm input {
-    margin: 10px;
-    width: 200px;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -151,6 +157,15 @@ body {
     background-color: #01394c;
     color: aqua;
 
+}
+
+label h1{
+    text-align: center;
+}
+
+.TodoForm button {
+    margin: 10px;
+    
 }
 
 
