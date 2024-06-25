@@ -73,7 +73,7 @@ body {
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
     .startForm {
         flex-direction: column;
         align-items: center;
@@ -90,6 +90,14 @@ body {
         margin-top: 10px;
         height: 35px;
         border-radius: 15px;
+    }
+
+
+
+    .TodoForm {
+        width: 90%;
+        
+
     }
   }
 
@@ -139,12 +147,9 @@ body {
     position: relative;
     height: 0px;
     min-width: 55%;
-    transition:
-        height 1s;
+    transition: ease all 1s;
 
 }
-
-
 
 
 
@@ -159,6 +164,7 @@ body {
     text-align: center;
     background-color: #01394c;
     color: aqua;
+
 
 
 }
