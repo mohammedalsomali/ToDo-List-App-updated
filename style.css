@@ -134,10 +134,11 @@ body {
 .TodoForm {
     display: flex;
     flex-direction: column;
+    align-items: center;
     overflow: hidden;
     position: relative;
     height: 0px;
-
+    min-width: 55%;
     transition:
         height 1s;
 
@@ -153,9 +154,28 @@ body {
     border-bottom-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    width: 97%;
+    height: 10%;
     text-align: center;
     background-color: #01394c;
     color: aqua;
+
+
+}
+
+.discription {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 93%;
+    height: 20%;
+    overflow: visible;
+    padding: 2%;
+    background-color: #01394c;
+    color: aqua;
+    resize: none;
+    
 
 }
 
@@ -171,6 +191,8 @@ label h1{
 
 
 .TodoForm label {
+    position: relative;
+    align-self: flex-start;
     margin: 10px;
     color: rgb(242, 243, 238);
 }
@@ -220,7 +242,7 @@ label h1{
 }
 
 .submit:hover h1 {
-    color: limegreen;
+    color: green;
     
 }
 
@@ -236,3 +258,5 @@ label h1{
 .cancelBtn:hover h1 {
     color: red;
 }
+
+

@@ -27,19 +27,22 @@
             <label for="text">Subject</label>
             <input class="subject" type="text">
 
-            <label for="text" > Discription</label>
-            <input class="discription" type="text" placeholder="descripe this to do">
+            <label for="text" >Discription</label>
+            <!-- <input class="discription" type="text" placeholder="descripe this to do"> -->
+            <textarea class="discription" placeholder="descripe this to do" form="TodoForm"></textarea>
+            
         
             <label class="emailLabel" for="email" > 
+                Email
                 <span class="emailHover"> 
                     a calender event will be sent to this email for this to ToDo 
                 </span>
-                Email
+                
             </label>
             
             <input class="email" type="email" placeholder="example@example.example">
 
-            <label for="date">Due Date</label>
+            <label for="dueDate">Due Date</label>
             <input class="dueDate" type="date">
 
             <div class="submitContainer">

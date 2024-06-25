@@ -25,8 +25,8 @@ function openForm (){
     formSubject.value = todoSubject.value;
 
 
-    todoForm.style.height = '420px';
-    
+    todoForm.style.height = '60%';
+   
 
     
 }
