@@ -126,6 +126,17 @@ body {
     outline: none;
 }
 
+.trash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: blue;
+    height: 0px;
+    min-width: 60%;
+    transition: ease all 1s;
+}
+
 .trashBtn {
     bottom:30px;
     right: 30px;
