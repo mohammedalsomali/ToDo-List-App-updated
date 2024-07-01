@@ -9,18 +9,27 @@ var dueDate = document.querySelector('.dueDate');
 var trashcontainer = document.querySelector('.trash');
 
 window.onload = function () {
-    
+   
+
     document.querySelector('.startTodoBtn').addEventListener('click', openForm);
     document.querySelector('.trashBtn').addEventListener('click', showTrash);
+    // document.querySelector('.TodoForm').addEventListener('submit', submittodoForm);
     
     
 } 
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    todoForm.addEventListener("submit", function(e) {
+        e.preventDefault() // Cancel the default action
+        submitTodoForm();
+    });
+});
 
 function openForm (){
     startForm.style.visibility = 'hidden';
     startForm.style.opacity = 0;
     startForm.style.height = '0px';
-    startForm.style.width = '0px';
+    // startForm.style.width = '0px';
 
     formSubject.value = todoSubject.value;
 
@@ -50,8 +59,14 @@ function showTrash() {
 
 }
 
-function submittodoForm() {
-    
+
+
+function submitTodoForm() {
+
+    startForm.style.visibility = 'visible';
+    startForm.style.opacity = 1;
+    startForm.style.height = '40px';
+
+    todoForm.style.height = '0px';
+
 }
-
-
