@@ -7,13 +7,14 @@ var todoDiscription= document.querySelector('.discription');
 var userEmail = document.querySelector('.email');
 var dueDate = document.querySelector('.dueDate');
 var trashcontainer = document.querySelector('.trash');
+var todosList = document.querySelector('.Todos');
 
 window.onload = function () {
    
 
     document.querySelector('.startTodoBtn').addEventListener('click', openForm);
     document.querySelector('.trashBtn').addEventListener('click', showTrash);
-    // document.querySelector('.TodoForm').addEventListener('submit', submittodoForm);
+    document.querySelector('.cancelBtn').addEventListener('click', cancelTodoForm);
     
     
 } 
@@ -26,10 +27,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function openForm (){
+
     startForm.style.visibility = 'hidden';
     startForm.style.opacity = 0;
     startForm.style.height = '0px';
-    // startForm.style.width = '0px';
 
     formSubject.value = todoSubject.value;
 
@@ -68,5 +69,27 @@ function submitTodoForm() {
     startForm.style.height = '40px';
 
     todoForm.style.height = '0px';
+
+    addTodo(formSubject.value);
+}
+
+
+function cancelTodoForm() {
+    startForm.style.visibility = 'visible';
+    startForm.style.opacity = 1;
+    startForm.style.height = '40px';
+
+    todoForm.style.height = '0px';
+
+}
+
+
+function addTodo(subject) {
+
+    var todo = document.createElement('a');
+    todo.innerHTML = subject;
+    todo.style.color = 'red';
+
+    todosList.appendChild(todo);
 
 }
