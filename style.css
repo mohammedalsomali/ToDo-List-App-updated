@@ -108,8 +108,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    opacity: 0;
 
 }
+
+
+
 
 .TodoSubject {
     width: 45vw;
