@@ -27,6 +27,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+
+// document.querySelector('.trashBtn').addEventListener('click', function(e){
+//     var isClickInside = trashcontainer.contains(e.target);
+    
+//     if(!isClickInside){
+//         trashcontainer.style.background = 'red';
+//     }
+// });
+
 function openForm (){
 
     startForm.style.visibility = 'hidden';
@@ -51,12 +60,17 @@ function showTrash() {
         startForm.style.height = '0px';
         todoForm.style.height = '0px';
         todoscontainer.style.opacity = 0;
-        trashcontainer.style.height = '60%'
+        trashcontainer.style.height = '60%';
+        trashcontainer.style.width = '50%';
+        trashcontainer.style.right = '25%';
+        trashcontainer.style.bottom = '20%';
         return
     }    
 
-
     trashcontainer.style.height = '0px';
+    trashcontainer.style.width = '0px';
+    trashcontainer.style.right = '40px';
+    trashcontainer.style.bottom = '40px';
     startForm.style.visibility = 'visible';
     startForm.style.opacity = 1;
     todoscontainer.style.opacity = 1;
@@ -97,6 +111,25 @@ function addTodo(subject) {
 
     todosList.appendChild(todo);
     todoscontainer.style.opacity = 1;
-    // todoscontainer.appendChild();
+    
 
 }
+
+
+
+
+// window.onload = function(){
+// 	var popup = document.getElementById('popup');
+//     var overlay = document.getElementById('backgroundOverlay');
+//     var openButton = document.getElementById('openOverlay');
+//     document.onclick = function(e){
+//         if(e.target.id == 'backgroundOverlay'){
+//             popup.style.display = 'none';
+//             overlay.style.display = 'none';
+//         }
+//         if(e.target === openButton){
+//          	popup.style.display = 'block';
+//             overlay.style.display = 'block';
+//         }
+//     };
+// };
