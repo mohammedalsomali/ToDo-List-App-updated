@@ -12,7 +12,7 @@ var todosList = document.querySelector('.TodosList');
 
 window.onload = function () {
    
-
+    
     document.querySelector('.startTodoBtn').addEventListener('click', openForm);
     document.querySelector('.trashBtn').addEventListener('click', showTrash);
     document.querySelector('.cancelBtn').addEventListener('click', cancelTodoForm);
@@ -28,11 +28,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-// document.querySelector('.trashBtn').addEventListener('click', function(e){
-//     var isClickInside = trashcontainer.contains(e.target);
+// document.querySelector('.pageContainer').addEventListener('click', function(e){
     
-//     if(!isClickInside){
-//         trashcontainer.style.background = 'red';
+//     if(!trashcontainer.style.height == '0px' || !trashcontainer.style.height == ''){
+//         showTrash();
 //     }
 // });
 
@@ -53,8 +52,8 @@ function openForm (){
 
 
 function showTrash() {
-
-    if(trashcontainer.style.height == '' || trashcontainer.style.height == '0px') {
+    console.log(trashcontainer.style.height);
+    if(trashcontainer.style.height == '0px' || trashcontainer.style.height == '') {
         startForm.style.visibility = 'hidden';
         startForm.style.opacity = 0;
         startForm.style.height = '0px';
@@ -64,9 +63,12 @@ function showTrash() {
         trashcontainer.style.width = '50%';
         trashcontainer.style.right = '25%';
         trashcontainer.style.bottom = '20%';
+        trashcontainer.style.transform = 'skew(0deg)';
+
         return
     }    
 
+    trashcontainer.style.transform = 'skew(55deg)';
     trashcontainer.style.height = '0px';
     trashcontainer.style.width = '0px';
     trashcontainer.style.right = '40px';
