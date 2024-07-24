@@ -111,11 +111,14 @@ body {
     opacity: 0;
     color: yellow;
 
+
 }
 
 .todo {
     display: flex;
     flex-direction: column;
+    border-radius: 10%;
+    background-color: aqua;
 }
 
 

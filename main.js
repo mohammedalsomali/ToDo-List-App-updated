@@ -27,13 +27,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-
-// document.querySelector('.pageContainer').addEventListener('click', function(e){
+// show the calender when the date field is clicked and dont allow for date < today
+dueDate.addEventListener('focus', function(e){
     
-//     if(!trashcontainer.style.height == '0px' || !trashcontainer.style.height == ''){
-//         showTrash();
-//     }
-// });
+    this.min= new Date().toISOString().split('T')[0];
+    this.showPicker();
+});
+
+
 
 function openForm (){
 
@@ -97,6 +98,7 @@ function submitTodoForm() {
 function cancelTodoForm() {
     startForm.style.visibility = 'visible';
     startForm.style.opacity = 1;
+    todoscontainer.style.opacity = 1;
     startForm.style.height = '40px';
 
     todoForm.style.height = '0px';
@@ -107,7 +109,7 @@ function cancelTodoForm() {
 function addTodo(subject, duedate) {
     
     var todo = document.createElement('div');
-    todo.classList.add = 'todo';
+    todo.className = 'todo';
     var todoHeader = document.createElement('h1');
     var todoDueDate = document.createElement('a');
     todoHeader.innerHTML = subject;
