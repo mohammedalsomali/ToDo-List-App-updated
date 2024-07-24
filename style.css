@@ -109,10 +109,14 @@ body {
     flex-direction: column;
     justify-content: center;
     opacity: 0;
+    color: yellow;
 
 }
 
-
+.todo {
+    display: flex;
+    flex-direction: column;
+}
 
 
 .TodoSubject {

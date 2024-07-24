@@ -8,7 +8,7 @@ var userEmail = document.querySelector('.email');
 var dueDate = document.querySelector('.dueDate');
 var trashcontainer = document.querySelector('.trash');
 var todoscontainer = document.querySelector('.Todos');
-var todosList = document.querySelector('.TodosList');
+// var todosList = document.querySelector('.TodosList');
 
 window.onload = function () {
    
@@ -90,7 +90,7 @@ function submitTodoForm() {
 
     todoForm.style.height = '0px';
 
-    addTodo(formSubject.value);
+    addTodo(formSubject.value, dueDate.value);
 }
 
 
@@ -104,14 +104,19 @@ function cancelTodoForm() {
 }
 
 
-function addTodo(subject) {
+function addTodo(subject, duedate) {
+    
+    var todo = document.createElement('div');
+    todo.classList.add = 'todo';
+    var todoHeader = document.createElement('h1');
+    var todoDueDate = document.createElement('a');
+    todoHeader.innerHTML = subject;
+    todoDueDate.innerHTML = duedate;
 
-    var todo = document.createElement('a');
-    todo.innerHTML = subject;
-    todo.style.color = 'red';
+    todo.appendChild(todoHeader);
+    todo.appendChild(todoDueDate);
 
-
-    todosList.appendChild(todo);
+    todoscontainer.appendChild(todo);
     todoscontainer.style.opacity = 1;
     
 
