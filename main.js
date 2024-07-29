@@ -8,7 +8,22 @@ var userEmail = document.querySelector('.email');
 var dueDate = document.querySelector('.dueDate');
 var trashcontainer = document.querySelector('.trash');
 var todoscontainer = document.querySelector('.Todos');
+
 // var todosList = document.querySelector('.TodosList');
+
+const prevTodos = JSON.parse(localStorage.getItem('todos'));
+
+const todoData = prevTodos || [];
+
+todoData.forEach(element => {
+    console.log(element);
+    if(element === undefined || element === null){
+        return
+    }
+    const temp = typeof(element);
+    console.log(temp);
+    // todoscontainer.append(temp);
+});
 
 
 document.querySelector('.startTodoBtn').addEventListener('click', openTodoForm);
@@ -133,8 +148,9 @@ function addTodo(subject, duedate, Discription) {
     todo.appendChild(todoDiscription);
     todo.appendChild(todoCompleteBtn);
     todo.appendChild(todoCancelBtn);
-   
+    todoData.push(todo);
     todoscontainer.appendChild(todo);
+    localStorage.setItem('todos', todoData.outerHTML);
     todoscontainer.style.opacity = 1;
     
 
