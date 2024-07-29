@@ -109,17 +109,27 @@ body {
     flex-direction: column;
     justify-content: center;
     opacity: 0;
-    color: yellow;
+    width: 60%;
+    margin: 5%;
 
 
 }
 
 .todo {
     display: flex;
-    flex-direction: column;
-    border-radius: 10%;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
     background-color: aqua;
+    margin: 2%;
+    padding: 2%;
 }
+
+
+.todo p {
+    display: none;
+}
+
 
 
 .TodoSubject {
@@ -294,4 +304,6 @@ label h1{
     color: red;
 }
 
-
+button {
+    background-color: transparent;
+}

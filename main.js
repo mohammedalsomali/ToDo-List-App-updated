@@ -10,15 +10,13 @@ var trashcontainer = document.querySelector('.trash');
 var todoscontainer = document.querySelector('.Todos');
 // var todosList = document.querySelector('.TodosList');
 
-window.onload = function () {
-   
-    
-    document.querySelector('.startTodoBtn').addEventListener('click', openForm);
-    document.querySelector('.trashBtn').addEventListener('click', showTrash);
-    document.querySelector('.cancelBtn').addEventListener('click', cancelTodoForm);
+
+document.querySelector('.startTodoBtn').addEventListener('click', openTodoForm);
+document.querySelector('.trashBtn').addEventListener('click', showTrashContainer);
+document.querySelector('.cancelBtn').addEventListener('click', cancelTodoForm);
     
     
-} 
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
     todoForm.addEventListener("submit", function(e) {
@@ -27,7 +25,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-// show the calender when the date field is clicked and dont allow for date < today
+// show the calender when the date field is clicked and dont allow for due date < today
 dueDate.addEventListener('focus', function(e){
     
     this.min= new Date().toISOString().split('T')[0];
@@ -36,7 +34,7 @@ dueDate.addEventListener('focus', function(e){
 
 
 
-function openForm (){
+function openTodoForm(){
 
     startForm.style.visibility = 'hidden';
     startForm.style.opacity = 0;
@@ -52,7 +50,7 @@ function openForm (){
 
 
 
-function showTrash() {
+function showTrashContainer() {
     console.log(trashcontainer.style.height);
     if(trashcontainer.style.height == '0px' || trashcontainer.style.height == '') {
         startForm.style.visibility = 'hidden';
@@ -91,7 +89,7 @@ function submitTodoForm() {
 
     todoForm.style.height = '0px';
 
-    addTodo(formSubject.value, dueDate.value);
+    addTodo(formSubject.value, dueDate.value, todoDiscription.value);
 }
 
 
@@ -106,18 +104,36 @@ function cancelTodoForm() {
 }
 
 
-function addTodo(subject, duedate) {
+function addTodo(subject, duedate, Discription) {
     
     var todo = document.createElement('div');
     todo.className = 'todo';
     var todoHeader = document.createElement('h1');
     var todoDueDate = document.createElement('a');
+    var todoDiscription = document.createElement('p');
+    var todoCompleteBtn = document.createElement('button');
+    var todoCancelBtn = document.createElement('button');
+
+    var cancelBtnStyle = document.createElement('h1');
+    cancelBtnStyle.className = 'bi bi-x-square-fill';
+    todoCancelBtn.appendChild(cancelBtnStyle);
+    
+    var completeBtnStyle = document.createElement('h1');
+    completeBtnStyle.className = 'bi bi-check-square-fill';
+    todoCompleteBtn.appendChild(completeBtnStyle);
+    
+
     todoHeader.innerHTML = subject;
     todoDueDate.innerHTML = duedate;
+    todoDiscription.innerHTML = Discription; 
+
 
     todo.appendChild(todoHeader);
     todo.appendChild(todoDueDate);
-
+    todo.appendChild(todoDiscription);
+    todo.appendChild(todoCompleteBtn);
+    todo.appendChild(todoCancelBtn);
+   
     todoscontainer.appendChild(todo);
     todoscontainer.style.opacity = 1;
     
@@ -127,18 +143,3 @@ function addTodo(subject, duedate) {
 
 
 
-// window.onload = function(){
-// 	var popup = document.getElementById('popup');
-//     var overlay = document.getElementById('backgroundOverlay');
-//     var openButton = document.getElementById('openOverlay');
-//     document.onclick = function(e){
-//         if(e.target.id == 'backgroundOverlay'){
-//             popup.style.display = 'none';
-//             overlay.style.display = 'none';
-//         }
-//         if(e.target === openButton){
-//          	popup.style.display = 'block';
-//             overlay.style.display = 'block';
-//         }
-//     };
-// };
