@@ -125,6 +125,11 @@ body {
     padding: 2%;
 }
 
+.todo:hover * {
+    display: block;
+
+}
+
 
 .todo p {
     display: none;

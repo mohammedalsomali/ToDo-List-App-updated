@@ -11,19 +11,19 @@ var todoscontainer = document.querySelector('.Todos');
 
 // var todosList = document.querySelector('.TodosList');
 
-const prevTodos = JSON.parse(localStorage.getItem('todos'));
+// const prevTodos = JSON.parse(localStorage.getItem('todos'));
 
-const todoData = prevTodos || [];
+// const todoData = prevTodos || [];
 
-todoData.forEach(element => {
-    console.log(element);
-    if(element === undefined || element === null){
-        return
-    }
-    const temp = typeof(element);
-    console.log(temp);
-    // todoscontainer.append(temp);
-});
+// todoData.forEach(element => {
+//     console.log(element);
+//     if(element === undefined || element === null){
+//         return
+//     }
+//     const temp = typeof(element);
+//     console.log(temp);
+//     // todoscontainer.append(temp);
+// });
 
 
 document.querySelector('.startTodoBtn').addEventListener('click', openTodoForm);
@@ -148,9 +148,9 @@ function addTodo(subject, duedate, Discription) {
     todo.appendChild(todoDiscription);
     todo.appendChild(todoCompleteBtn);
     todo.appendChild(todoCancelBtn);
-    todoData.push(todo);
+    // todoData.push(todo);
     todoscontainer.appendChild(todo);
-    localStorage.setItem('todos', todoData.outerHTML);
+    // localStorage.setItem('todos', todoData.outerHTML);
     todoscontainer.style.opacity = 1;
     
 
