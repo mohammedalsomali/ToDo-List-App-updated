@@ -9,28 +9,15 @@ var dueDate = document.querySelector('.dueDate');
 var trashcontainer = document.querySelector('.trash');
 var todoscontainer = document.querySelector('.Todos');
 
-// var todosList = document.querySelector('.TodosList');
-
-// const prevTodos = JSON.parse(localStorage.getItem('todos'));
-
-// const todoData = prevTodos || [];
-
-// todoData.forEach(element => {
-//     console.log(element);
-//     if(element === undefined || element === null){
-//         return
-//     }
-//     const temp = typeof(element);
-//     console.log(temp);
-//     // todoscontainer.append(temp);
-// });
-
 
 document.querySelector('.startTodoBtn').addEventListener('click', openTodoForm);
 document.querySelector('.trashBtn').addEventListener('click', showTrashContainer);
 document.querySelector('.cancelBtn').addEventListener('click', cancelTodoForm);
-    
-    
+
+// var ite = document.getElementsByClassName("cancelTodo");
+// ite?.addEventListener('click', ()=> removeTodo(ite.parentNode));
+document.querySelector('.todo')?.addEventListener('submit', ()=> console.log('wooh!!!!! its working'));
+
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -66,7 +53,7 @@ function openTodoForm(){
 
 
 function showTrashContainer() {
-    console.log(trashcontainer.style.height);
+
     if(trashcontainer.style.height == '0px' || trashcontainer.style.height == '') {
         startForm.style.visibility = 'hidden';
         startForm.style.opacity = 0;
@@ -78,6 +65,10 @@ function showTrashContainer() {
         trashcontainer.style.right = '25%';
         trashcontainer.style.bottom = '20%';
         trashcontainer.style.transform = 'skew(0deg)';
+
+        for(var child of trashcontainer.children){
+            child.style.opacity = 1;
+        }
 
         return
     }    
@@ -108,6 +99,8 @@ function submitTodoForm() {
 }
 
 
+
+
 function cancelTodoForm() {
     startForm.style.visibility = 'visible';
     startForm.style.opacity = 1;
@@ -119,6 +112,8 @@ function cancelTodoForm() {
 }
 
 
+
+
 function addTodo(subject, duedate, Discription) {
     
     var todo = document.createElement('div');
@@ -128,6 +123,8 @@ function addTodo(subject, duedate, Discription) {
     var todoDiscription = document.createElement('p');
     var todoCompleteBtn = document.createElement('button');
     var todoCancelBtn = document.createElement('button');
+    todoCancelBtn.className = 'cancelTodo';
+    todoCancelBtn.type = 'submit';
 
     var cancelBtnStyle = document.createElement('h1');
     cancelBtnStyle.className = 'bi bi-x-square-fill';
@@ -153,6 +150,13 @@ function addTodo(subject, duedate, Discription) {
     // localStorage.setItem('todos', todoData.outerHTML);
     todoscontainer.style.opacity = 1;
     
+
+}
+
+
+function removeTodo(todo) {
+    todo.style.opacity = 0;
+    trashcontainer.appendChild(todo);
 
 }
 

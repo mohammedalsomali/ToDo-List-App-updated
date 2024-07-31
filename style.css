@@ -124,11 +124,11 @@ body {
     margin: 2%;
     padding: 2%;
 }
-
+/* 
 .todo:hover * {
     display: block;
 
-}
+} */
 
 
 .todo p {
@@ -312,3 +312,8 @@ label h1{
 button {
     background-color: transparent;
 }
+
+
+/* .cancelTodo:hover {
+    background-color:red;
+} */
