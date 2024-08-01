@@ -13,22 +13,18 @@ var testing;
 document.querySelector('.startTodoBtn')?.addEventListener('click', openTodoForm);
 document.querySelector('.trashBtn').addEventListener('click', showTrashContainer);
 document.querySelector('.cancelBtn').addEventListener('click', cancelTodoForm);
-
+document.querySelector('.submit').addEventListener('click', submitTodoForm);
 
 document.addEventListener("click", (e)=> {
-    var clickedBtn = document.querySelector('.danger');
-    testing = e.target;
-    if(e.target == clickedBtn){
-        console.log("yay");
+    // used for testing
+    // var clickedBtn = document.querySelector('.cancelTodo');
+    // testing = e.target;
+    if(e.target.classList.value == 'cancelTodo'){
+        removeTodo(e.target.parentNode);
     }
 })
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    todoForm.addEventListener("submit", function(e) {
-        e.preventDefault() // Cancel the default action
-        submitTodoForm();
-    });
-});
+
 
 // show the calender when the date field is clicked and dont allow for due date < today
 dueDate.addEventListener('focus', function(e){
@@ -85,7 +81,9 @@ function showTrashContainer() {
     startForm.style.opacity = 1;
     todoscontainer.style.opacity = 1;
     startForm.style.height = '40px';
-
+    for(var child of trashcontainer.children){
+        child.style.opacity = 0;
+    }
 }
 
 
@@ -127,7 +125,7 @@ function addTodo(subject, duedate, Discription) {
     var todoCompleteBtn = document.createElement('button');
     var todoCancelBtn = document.createElement('button');
     todoCancelBtn.innerHTML = "cancel"
-    todoCancelBtn.classList = "danger";
+    todoCancelBtn.classList = "cancelTodo";
     todoCompleteBtn.classList = "btn btn-primary";
     
 
@@ -149,11 +147,11 @@ function addTodo(subject, duedate, Discription) {
 }
 
 
-function removeTodo() {
-    // todo.style.opacity = 0;
-    // trashcontainer.appendChild(todo);
-    console.log("yay!!! it working");
+function removeTodo(todo) {
+    todo.style.opacity = 0;
+    trashcontainer.appendChild(todo);
+   
 
 }
 
-
+
