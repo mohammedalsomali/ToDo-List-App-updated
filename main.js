@@ -8,17 +8,20 @@ var userEmail = document.querySelector('.email');
 var dueDate = document.querySelector('.dueDate');
 var trashcontainer = document.querySelector('.trash');
 var todoscontainer = document.querySelector('.Todos');
+var testing;
 
-
-document.querySelector('.startTodoBtn').addEventListener('click', openTodoForm);
+document.querySelector('.startTodoBtn')?.addEventListener('click', openTodoForm);
 document.querySelector('.trashBtn').addEventListener('click', showTrashContainer);
 document.querySelector('.cancelBtn').addEventListener('click', cancelTodoForm);
 
-// var ite = document.getElementsByClassName("cancelTodo");
-// ite?.addEventListener('click', ()=> removeTodo(ite.parentNode));
-document.querySelector('.todo')?.addEventListener('submit', ()=> console.log('wooh!!!!! its working'));
 
-
+document.addEventListener("click", (e)=> {
+    var clickedBtn = document.querySelector('.danger');
+    testing = e.target;
+    if(e.target == clickedBtn){
+        console.log("yay");
+    }
+})
 
 document.addEventListener('DOMContentLoaded', (event) => {
     todoForm.addEventListener("submit", function(e) {
@@ -123,16 +126,9 @@ function addTodo(subject, duedate, Discription) {
     var todoDiscription = document.createElement('p');
     var todoCompleteBtn = document.createElement('button');
     var todoCancelBtn = document.createElement('button');
-    todoCancelBtn.className = 'cancelTodo';
-    todoCancelBtn.type = 'submit';
-
-    var cancelBtnStyle = document.createElement('h1');
-    cancelBtnStyle.className = 'bi bi-x-square-fill';
-    todoCancelBtn.appendChild(cancelBtnStyle);
-    
-    var completeBtnStyle = document.createElement('h1');
-    completeBtnStyle.className = 'bi bi-check-square-fill';
-    todoCompleteBtn.appendChild(completeBtnStyle);
+    todoCancelBtn.innerHTML = "cancel"
+    todoCancelBtn.classList = "danger";
+    todoCompleteBtn.classList = "btn btn-primary";
     
 
     todoHeader.innerHTML = subject;
@@ -145,7 +141,6 @@ function addTodo(subject, duedate, Discription) {
     todo.appendChild(todoDiscription);
     todo.appendChild(todoCompleteBtn);
     todo.appendChild(todoCancelBtn);
-    // todoData.push(todo);
     todoscontainer.appendChild(todo);
     // localStorage.setItem('todos', todoData.outerHTML);
     todoscontainer.style.opacity = 1;
@@ -154,12 +149,11 @@ function addTodo(subject, duedate, Discription) {
 }
 
 
-function removeTodo(todo) {
-    todo.style.opacity = 0;
-    trashcontainer.appendChild(todo);
+function removeTodo() {
+    // todo.style.opacity = 0;
+    // trashcontainer.appendChild(todo);
+    console.log("yay!!! it working");
 
 }
-
-
 
 
