@@ -10,7 +10,7 @@ var trashcontainer = document.querySelector('.trash');
 var todoscontainer = document.querySelector('.Todos');
 var testing;
 
-document.querySelector('.startTodoBtn')?.addEventListener('click', openTodoForm);
+document.querySelector('.startTodoBtn').addEventListener('click', openTodoForm);
 document.querySelector('.trashBtn').addEventListener('click', showTrashContainer);
 document.querySelector('.cancelBtn').addEventListener('click', cancelTodoForm);
 document.querySelector('.submit').addEventListener('click', submitTodoForm);
@@ -37,20 +37,23 @@ dueDate.addEventListener('focus', function(e){
 
 function openTodoForm(){
 
+    if(todoSubject.value === ''){
+        return alert("please add a subject");
+    }
+    formSubject.value = todoSubject.value;
     startForm.style.visibility = 'hidden';
     startForm.style.opacity = 0;
     startForm.style.height = '0px';
+    
+
     todoscontainer.style.opacity = 0;
-
-    formSubject.value = todoSubject.value;
-
     todoForm.style.height = '60%';
     
 }
 
 
 
-
+// trash is where the deleted todos move to
 function showTrashContainer() {
 
     if(trashcontainer.style.height == '0px' || trashcontainer.style.height == '') {
@@ -154,4 +157,4 @@ function removeTodo(todo) {
 
 }
 
-
+

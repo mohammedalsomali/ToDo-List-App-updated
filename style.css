@@ -108,10 +108,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    opacity: 0;
     width: 60%;
     margin: 5%;
-
+    
 
 }
 
@@ -124,11 +123,7 @@ body {
     margin: 2%;
     padding: 2%;
 }
-/* 
-.todo:hover * {
-    display: block;
 
-} */
 
 
 .todo p {
@@ -309,8 +304,10 @@ label h1{
     color: red;
 }
 
-/* button {
+button {
     background-color: transparent;
 }
- */
+
+
+
 
