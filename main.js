@@ -121,27 +121,48 @@ function cancelTodoForm() {
 function addTodo(subject, duedate, Discription) {
     
     var todo = document.createElement('div');
-    todo.className = 'todo';
+    todo.classList = 'todo';
     var todoHeader = document.createElement('h1');
     var todoDueDate = document.createElement('a');
-    var todoDiscription = document.createElement('p');
+    var subjectContainer = document.createElement('div'); //this is a container for the todo subject and due date
+
+
+
     var todoCompleteBtn = document.createElement('button');
     var todoCancelBtn = document.createElement('button');
     todoCancelBtn.innerHTML = "cancel"
     todoCancelBtn.classList = "cancelTodo";
-    todoCompleteBtn.classList = "btn btn-primary";
+    todoCompleteBtn.classList = "completeTodo";
     
+    var todoBtnContainer = document.createElement('div');
+    // creating h1 elements to hold the todo button Icons
+
+    var cancelBtnIcon = document.createElement('h1');
+    cancelBtnIcon.classList = 'bi bi-x-square-fill';
+    todoCancelBtn.appendChild(cancelBtnIcon);
+
+    var completeBtnIcon = document.createElement('h1');
+    completeBtnIcon.classList = 'bi bi-check-square-fill';
+    todoCompleteBtn.appendChild(completeBtnIcon);
+
+
+    var todoDiscription = document.createElement('p');
+
 
     todoHeader.innerHTML = subject;
     todoDueDate.innerHTML = duedate;
     todoDiscription.innerHTML = Discription; 
 
 
-    todo.appendChild(todoHeader);
-    todo.appendChild(todoDueDate);
+
+    subjectContainer.appendChild(todoHeader);
+    subjectContainer.appendChild(todoDueDate);
+    todo.appendChild(subjectContainer);
+    todoBtnContainer.appendChild(todoCompleteBtn);
+    todoBtnContainer.appendChild(todoCancelBtn);
+    todo.appendChild(todoBtnContainer);
     todo.appendChild(todoDiscription);
-    todo.appendChild(todoCompleteBtn);
-    todo.appendChild(todoCancelBtn);
+    
     todoscontainer.appendChild(todo);
     // localStorage.setItem('todos', todoData.outerHTML);
     todoscontainer.style.opacity = 1;

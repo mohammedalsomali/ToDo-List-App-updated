@@ -108,28 +108,37 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    row-gap: 15px;
     width: 60%;
     margin: 5%;
-    
-
+    transition: all linear 1s;
 }
 
 .todo {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap:wrap;
     border-radius: 10px;
     background-color: aqua;
-    margin: 2%;
     padding: 2%;
+    transition: all linear 1s;
 }
 
 
 
 .todo p {
-    display: none;
+    opacity: 0;
+    height:0px;
 }
 
+.todo div {
+    flex: 70% 30%;
+}
+
+.Todos:hover > .todo {opacity: 0.6; filter: blur(0.5rem);}
+.Todos > .todo:hover {opacity: 1; filter: blur(0);}
+.Todos > .todo:hover p {opacity: 1; height: auto;}
 
 
 .TodoSubject {
@@ -309,5 +318,7 @@ button {
 }
 
 
-
+h1 {
+    text-transform: uppercase;
+}
 
