@@ -20,7 +20,7 @@ document.addEventListener("click", (e)=> {
     // var clickedBtn = document.querySelector('.cancelTodo');
     // testing = e.target;
     if(e.target.classList.value == 'cancelTodo'){
-        removeTodo(e.target.parentNode);
+        removeTodo(e.target.parentNode.parentNode);
     }
 })
 
@@ -47,7 +47,7 @@ function openTodoForm(){
     
 
     todoscontainer.style.opacity = 0;
-    todoForm.style.height = '60%';
+    todoForm.style.height = '65%';
     
 }
 
@@ -67,25 +67,33 @@ function showTrashContainer() {
         trashcontainer.style.right = '25%';
         trashcontainer.style.bottom = '20%';
         trashcontainer.style.transform = 'skew(0deg)';
+        trashcontainer.style.opacity = 1;
+
 
         for(var child of trashcontainer.children){
             child.style.opacity = 1;
+            child.style.width = 'auto';
+            child.style.height = 'auto';
         }
 
         return
     }    
 
-    trashcontainer.style.transform = 'skew(55deg)';
+    trashcontainer.style.transform = 'skew(50deg)';
     trashcontainer.style.height = '0px';
     trashcontainer.style.width = '0px';
     trashcontainer.style.right = '40px';
     trashcontainer.style.bottom = '40px';
+    trashcontainer.style.opacity = 0;
     startForm.style.visibility = 'visible';
     startForm.style.opacity = 1;
     todoscontainer.style.opacity = 1;
     startForm.style.height = '40px';
     for(var child of trashcontainer.children){
         child.style.opacity = 0;
+        child.style.width = '0px';
+        child.style.height = '0px';
+        child.style.overflow = 'hidden';
     }
 }
 
@@ -130,13 +138,12 @@ function addTodo(subject, duedate, Discription) {
 
     var todoCompleteBtn = document.createElement('button');
     var todoCancelBtn = document.createElement('button');
-    todoCancelBtn.innerHTML = "cancel"
     todoCancelBtn.classList = "cancelTodo";
     todoCompleteBtn.classList = "completeTodo";
     
     var todoBtnContainer = document.createElement('div');
-    // creating h1 elements to hold the todo button Icons
 
+    // creating h1 elements to hold the todo button Icons
     var cancelBtnIcon = document.createElement('h1');
     cancelBtnIcon.classList = 'bi bi-x-square-fill';
     todoCancelBtn.appendChild(cancelBtnIcon);
