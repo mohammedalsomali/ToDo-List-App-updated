@@ -15,6 +15,14 @@ document.querySelector('.trashBtn').addEventListener('click', showTrashContainer
 document.querySelector('.cancelBtn').addEventListener('click', cancelTodoForm);
 document.querySelector('.submit').addEventListener('click', submitTodoForm);
 
+// todoSubject.onkeydown = ()=> {
+    
+//     if(window.Event.keyCode == '13'){
+//         openTodoForm();
+//     }
+// }
+
+
 document.addEventListener("click", (e)=> {
     // used for testing
     // var clickedBtn = document.querySelector('.cancelTodo');
@@ -23,6 +31,7 @@ document.addEventListener("click", (e)=> {
         removeTodo(e.target.parentNode.parentNode);
     }
 })
+
 
 
 
