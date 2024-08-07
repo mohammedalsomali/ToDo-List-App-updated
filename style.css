@@ -20,26 +20,25 @@ body {
 
 }
 
-
-.pageContainer {
-    /* display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center; */
-    width: 100%;
-    height: 100%;
-}
-
-
 .formsContainer {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    position:relative;
-    top: 25%;
     
+
+
 }
+
+.pageContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
 
 .startTodoBtn {
     width: 25vw;
@@ -73,8 +72,8 @@ body {
     display: flex;
     height: 40px;
     transition:
-        height 0.6s,
-        width 0.6s,
+        height 1s,
+        width 1s,
         visibility 0.3s linear,
         opacity 0.3s linear;
     visibility: visible;
@@ -122,8 +121,7 @@ body {
     row-gap: 15px;
     width: 60%;
     margin: 5%;
-    transition: all linear 0.6s;
-    
+    transition: all linear 1s;
 }
 
 .todo {
@@ -134,9 +132,8 @@ body {
     border-radius: 10px;
     background-color: aqua;
     padding: 2%;
-    /* max-height: 100%; */
-    transition: all linear 0.6s;
-    
+    max-height: 100%;
+    transition: all linear 0.8s;
 }
 
 
@@ -144,9 +141,9 @@ body {
 .todo p {
     opacity: 0;
     height: 0px;
+    max-height: 100%;
     overflow-y: hidden;
-    max-height: 23ch;
-    transition: all linear 0.6s;
+    transition: all linear 1s;
 }
 
 .todo div {
@@ -154,8 +151,8 @@ body {
 }
 
 .Todos:hover > .todo {opacity: 0.8; filter: blur(0.1rem);}
-.Todos > .todo:hover {opacity: 1; filter: blur(0); height: auto;}
-.Todos > .todo:hover p {opacity: 1; height: 200px;}
+.Todos > .todo:hover {opacity: 1; filter: blur(0);}
+.Todos > .todo:hover p {opacity: 1; height: auto;}
 
 
 .TodoSubject {
@@ -214,7 +211,7 @@ body {
     position: relative;
     height: 0px;
     min-width: 55%;
-    transition: ease all 0.6s;
+    transition: ease all 1s;
 
 }
 
