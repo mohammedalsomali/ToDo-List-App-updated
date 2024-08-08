@@ -145,7 +145,7 @@ body {
     opacity: 0;
     height: 0px;
     overflow-y: hidden;
-    max-height: 23ch;
+    max-height: 20ch;
     transition: all linear 0.6s;
 }
 
@@ -211,7 +211,7 @@ body {
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    position: absolute;
+    position: relative;
     height: 0px;
     min-width: 55%;
     transition: ease all 0.6s;
@@ -306,15 +306,15 @@ label h1{
 
 }
 
-.submit {
+.addTodo {
     background-color: transparent;
 }
 
-.submit h1 {
+.addTodo h1 {
     color: aqua;
 }
 
-.submit:hover h1 {
+.addTodo:hover h1 {
     color: green;
     
 }

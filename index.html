@@ -15,12 +15,10 @@
         <div class="formsContainer">
             <form class="startForm">
             
-                <input class="TodoSubject" type="text" placeholder="Add a ew Todo">
+                <input class="TodoSubject" type="text" placeholder="Add a ew Todo" required>
                  <!-- this is the button used to create new Todos -->
-                <button class="startTodoBtn" type="button"> 
-                    <!-- create to do button sign -->
-                    Create
-                </button>   
+                <input class="startTodoBtn" type="submit" value="Create a Todo"> 
+              
             </form>
             <form class="TodoForm">
                 <label for="TodoForm"><h1>To Do</h1></label>
@@ -47,7 +45,7 @@
                 <input class="dueDate" type="date" required min="3000-01-01">
     
                 <div class="submitContainer">
-                    <button type="button" class="submit"> 
+                    <button type="submit" class="addTodo"> 
                         <h1 class="bi bi-check-square-fill"></h1> 
                     </button>
                     
@@ -59,7 +57,7 @@
             
             <!-- this the a table of the list of todos in the queue -->
             <div class="Todos">
-                <div class="todo">
+                <div class="todo" id="todoTemplate">
                     <div>
                         <h1> TEST 1</h1>
                         <a> DUE: 10/10/2024 </a>
