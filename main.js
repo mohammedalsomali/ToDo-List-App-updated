@@ -47,7 +47,8 @@ function openTodoForm(){
     
 
     todoscontainer.style.opacity = 0;
-    todoForm.style.height = '65%';
+    todoscontainer.style.height = '0px';
+    todoForm.style.height = 'auto';
     
 }
 
@@ -117,6 +118,8 @@ function cancelTodoForm() {
     startForm.style.visibility = 'visible';
     startForm.style.opacity = 1;
     todoscontainer.style.opacity = 1;
+    todoscontainer.style.height = 'auto';
+
     startForm.style.height = '40px';
 
     todoForm.style.height = '0px';
