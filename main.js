@@ -10,10 +10,10 @@ var trashContainer = document.querySelector('.trash');
 var todosContainer = document.querySelector('.Todos');
 var testing;
 
-// document.querySelector('.startTodoBtn').addEventListener('click', openTodoForm);
+
 document.querySelector('.trashBtn').addEventListener('click', showtrashContainer);
 document.querySelector('.cancelBtn').addEventListener('click', cancelTodoForm);
-// document.querySelector('.addTodo').addEventListener('click', submitTodoForm);
+
 
 document.addEventListener("click", (e)=> {
     if(e.target.classList.value == 'cancelTodo'){
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 document.addEventListener('DOMContentLoaded', (event) => {
     startForm.addEventListener("submit", function(e) {
         e.preventDefault(); // Cancel the default action
-        // openTodoForm(); 
+        openTodoForm(); 
     });
 });
 
@@ -53,6 +53,7 @@ function openTodoForm(){
         return alert("please add a subject");
     }
     formSubject.value = todoSubject.value;
+    
     todoForm.style.height = '30rem';
     
 }
@@ -129,68 +130,26 @@ function cancelTodoForm() {
     startForm.style.height = '40px';
 
     todoForm.style.height = '0px';
+    todoSubject.value = '';
 
 }
 
 
 
 
-// function addTodo(subject, duedate, Discription) {
-    
-//     var todo = document.createElement('div');
-//     todo.classList = 'todo';
-//     var todoHeader = document.createElement('h1');
-//     var todoDueDate = document.createElement('a');
-//     var subjectContainer = document.createElement('div'); //this is a container for the todo subject and due date
-
-
-
-//     var todoCompleteBtn = document.createElement('button');
-//     var todoCancelBtn = document.createElement('button');
-//     todoCancelBtn.classList = "cancelTodo";
-//     todoCompleteBtn.classList = "completeTodo";
-    
-//     var todoBtnContainer = document.createElement('div');
-
-//     // creating h1 elements to hold the todo button Icons
-//     var cancelBtnIcon = document.createElement('h1');
-//     cancelBtnIcon.classList = 'bi bi-x-square-fill';
-//     todoCancelBtn.appendChild(cancelBtnIcon);
-
-//     var completeBtnIcon = document.createElement('h1');
-//     completeBtnIcon.classList = 'bi bi-check-square-fill';
-//     todoCompleteBtn.appendChild(completeBtnIcon);
-
-
-//     var todoDiscription = document.createElement('p');
-
-
-//     todoHeader.innerHTML = subject;
-//     todoDueDate.innerHTML = duedate;
-//     todoDiscription.innerHTML = Discription; 
-
-
-
-//     subjectContainer.appendChild(todoHeader);
-//     subjectContainer.appendChild(todoDueDate);
-//     todo.appendChild(subjectContainer);
-//     todoBtnContainer.appendChild(todoCompleteBtn);
-//     todoBtnContainer.appendChild(todoCancelBtn);
-//     todo.appendChild(todoBtnContainer);
-//     todo.appendChild(todoDiscription);
-    
-//     todosContainer.appendChild(todo);
-//     // localStorage.setItem('todos', todoData.outerHTML);
-//     todosContainer.style.opacity = 1;
-    
-
-// }
 
 
 
 function addTodo(subject, duedate, Discription) {
     
     var newTodo = document.getElementById('todoTemplate').cloneNode(true);
+    newTodo.removeAttribute('id');
+    newTodo.removeAttribute('class');
+    newTodo.classList = 'todo';
+    newTodo.children[0].children[0].innerHTML = subject;
+    newTodo.children[0].children[1].innerHTML = duedate;
+    newTodo.children[2].innerHTML = Discription;
+
     todosContainer.appendChild(newTodo);
     todosContainer.style.opacity =1;
     
