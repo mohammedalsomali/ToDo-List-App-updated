@@ -69,11 +69,11 @@ function showtrashContainer() {
         startForm.style.height = '0px';
         todoForm.style.height = '0px';
         todosContainer.style.opacity = 0;
-        trashContainer.style.height = '60%';
-        trashContainer.style.width = '50%';
-        trashContainer.style.right = '25%';
-        trashContainer.style.bottom = '20%';
-        trashContainer.style.transform = 'skew(0deg)';
+        trashContainer.style.height = '90%';
+        trashContainer.style.width = '90%';
+        // trashContainer.style.right = '25%';
+        // trashContainer.style.bottom = '20%';
+        trashContainer.style.animation = 'showTrashAnimation 2s';
         trashContainer.style.opacity = 1;
 
 
@@ -86,11 +86,13 @@ function showtrashContainer() {
         return
     }    
 
-    trashContainer.style.transform = 'skew(50deg)';
-    trashContainer.style.height = '0px';
-    trashContainer.style.width = '0px';
-    trashContainer.style.right = '40px';
-    trashContainer.style.bottom = '40px';
+   
+    trashContainer.style.animation = 'none';
+    trashContainer.style.animation = 'hideTrashAnimation 1.5s';
+    // trashContainer.style.height = '0%';
+    // trashContainer.style.width = '0%';
+    // trashContainer.style.right = '40px';
+    // trashContainer.style.bottom = '40px';
     trashContainer.style.opacity = 0;
     startForm.style.visibility = 'visible';
     startForm.style.opacity = 1;
