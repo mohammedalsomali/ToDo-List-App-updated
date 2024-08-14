@@ -69,12 +69,7 @@ function showtrashContainer() {
         startForm.style.height = '0px';
         todoForm.style.height = '0px';
         todosContainer.style.opacity = 0;
-        trashContainer.style.height = '90%';
-        trashContainer.style.width = '90%';
-        // trashContainer.style.right = '25%';
-        // trashContainer.style.bottom = '20%';
-        trashContainer.style.animation = 'showTrashAnimation 2s';
-        trashContainer.style.opacity = 1;
+        trashContainer.className = 'trash';
 
 
         for(var child of trashContainer.children){
@@ -87,13 +82,7 @@ function showtrashContainer() {
     }    
 
    
-    trashContainer.style.animation = 'none';
-    trashContainer.style.animation = 'hideTrashAnimation 1.5s';
-    // trashContainer.style.height = '0%';
-    // trashContainer.style.width = '0%';
-    // trashContainer.style.right = '40px';
-    // trashContainer.style.bottom = '40px';
-    trashContainer.style.opacity = 0;
+    trashContainer.className = 'trash2';
     startForm.style.visibility = 'visible';
     startForm.style.opacity = 1;
     todosContainer.style.opacity = 1;
