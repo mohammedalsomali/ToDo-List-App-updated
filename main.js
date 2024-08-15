@@ -14,6 +14,12 @@ var testing;
 document.querySelector('.trashBtn').addEventListener('click', showtrashContainer);
 document.querySelector('.cancelBtn').addEventListener('click', cancelTodoForm);
 
+document.addEventListener("click", (e)=> {
+    if(e.target.classList.value == 'completeTodo'){
+        completeTodo(e.target.parentNode.parentNode);
+    }
+})
+
 
 document.addEventListener("click", (e)=> {
     if(e.target.classList.value == 'cancelTodo'){
@@ -21,6 +27,7 @@ document.addEventListener("click", (e)=> {
     }
 })
 
+// prevent the form from refreshing the page on submit
 document.addEventListener('DOMContentLoaded', (event) => {
     console.log("1");
     todoForm.addEventListener("submit", function(e) {
@@ -30,7 +37,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 });
 
-
+// line-24
 document.addEventListener('DOMContentLoaded', (event) => {
     startForm.addEventListener("submit", function(e) {
         e.preventDefault(); // Cancel the default action
@@ -62,35 +69,37 @@ function openTodoForm(){
 
 // trash is where the deleted todos move to
 function showtrashContainer() {
-
-    if(trashContainer.style.height == '0px' || trashContainer.style.height == '') {
+    console.log("before");
+    if(trashContainer.classList == 'hideTrash' || trashContainer.classList == 'trash') {
         startForm.style.visibility = 'hidden';
         startForm.style.opacity = 0;
         startForm.style.height = '0px';
         todoForm.style.height = '0px';
         todosContainer.style.opacity = 0;
-        trashContainer.className = 'trash';
+        // trashContainer.className = 'trash';
+        // trashContainer.style.opacity = 1;
+        trashContainer.classList = 'showTrash';
+
 
 
         for(var child of trashContainer.children){
-            child.style.opacity = 1;
+            
             child.style.width = 'auto';
             child.style.height = 'auto';
         }
 
         return
     }    
+    
 
    
-    trashContainer.className = 'trash2';
+    trashContainer.classList = 'hideTrash';
     startForm.style.visibility = 'visible';
     startForm.style.opacity = 1;
     todosContainer.style.opacity = 1;
     startForm.style.height = '40px';
     for(var child of trashContainer.children){
-        child.style.opacity = 0;
-        child.style.width = '0px';
-        child.style.height = '0px';
+        
         child.style.overflow = 'hidden';
     }
 }
@@ -109,6 +118,21 @@ function submitTodoForm() {
     addTodo(formSubject.value, dueDate.value, todoDiscription.value);
 }
 
+function addTodo(subject, duedate, Discription) {
+    
+    var newTodo = document.getElementById('todoTemplate').cloneNode(true);
+    newTodo.removeAttribute('id');
+    newTodo.removeAttribute('class');
+    newTodo.classList = 'todo';
+    newTodo.children[0].children[0].innerHTML = subject;
+    newTodo.children[0].children[1].innerHTML = duedate;
+    newTodo.children[2].innerHTML = Discription;
+
+    todosContainer.appendChild(newTodo);
+    todosContainer.style.opacity =1;
+    
+
+}
 
 
 
@@ -127,29 +151,13 @@ function cancelTodoForm() {
 
 
 
-
-
-
-
-function addTodo(subject, duedate, Discription) {
-    
-    var newTodo = document.getElementById('todoTemplate').cloneNode(true);
-    newTodo.removeAttribute('id');
-    newTodo.removeAttribute('class');
-    newTodo.classList = 'todo';
-    newTodo.children[0].children[0].innerHTML = subject;
-    newTodo.children[0].children[1].innerHTML = duedate;
-    newTodo.children[2].innerHTML = Discription;
-
-    todosContainer.appendChild(newTodo);
-    todosContainer.style.opacity =1;
-    
-
+function completeTodo(todo){
+    todo.style.background = 'green';
 }
 
 
 function removeTodo(todo) {
-    todo.style.opacity = 0;
+
     trashContainer.appendChild(todo);
    
 

@@ -177,40 +177,50 @@ body {
     overflow: hidden;
     bottom:40px;
     right: 40px;
-    height: 90%;
-    width: 90%;
-    animation: hideTrashAnimation 2s;
-    animation-fill-mode: forwards;
-
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
 }
 
 
 
-.trash2 {
+.showTrash {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
     background-color: rgb(0, 0, 0);
     overflow: hidden;
-    bottom:40px;
-    right: 40px;
+    bottom:50px;
+    right: 50px;
     height: 90%;
     width: 90%;
-    opacity: 1;
     animation: showTrashAnimation 2s;
-    
+    animation-fill-mode: forwards;
+}
 
-
-
+.hideTrash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    bottom:50px;
+    right: 50px;
+    height: 90%;
+    width: 90%;
+    animation: hideTrashAnimation 2s;
+    animation-fill-mode: forwards;
 }
 
 
 @keyframes hideTrashAnimation {  
     0% {clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);}
-    33% {clip-path: polygon(0% 0%, 90% 100%, 100% 100%, 100% 0%);}
 
-    66% {clip-path: polygon(90% 0%, 90% 100%, 100% 100%, 100% 0%);}
+    33% {clip-path: polygon(0% 0%, 97% 100%, 100% 100%, 100% 0%);}
+
+    66% {clip-path: polygon(97% 0%, 97% 100%, 100% 100%, 100% 0%);}
     
     100% {clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);}
         
@@ -219,9 +229,9 @@ body {
 @keyframes showTrashAnimation { 
     0% {clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);} 
     
-    33% {clip-path: polygon(90% 0%, 90% 100%, 100% 100%, 100% 0%);}
+    33% {clip-path: polygon(97% 0%, 97% 100%, 100% 100%, 100% 0%);}
 
-    66% {clip-path: polygon(0% 0%, 90% 100%, 100% 100%, 100% 0%);}
+    66% {clip-path: polygon(0% 0%, 97% 100%, 100% 100%, 100% 0%);}
     
     100% {clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);}
     
