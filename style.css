@@ -130,13 +130,14 @@ body {
     border-radius: 10px;
     background-color: aqua;
     padding: 2%;
+    overflow: hidden;
     transition: all linear 0.6s;
     
 }
 
 
 
-.todo p {
+p {
     opacity: 0;
     overflow-y: hidden;
     max-height: 0ch;
@@ -182,6 +183,9 @@ body {
     overflow: hidden;
 }
 
+.showTrash:hover > .todo {opacity: 0.8; filter: blur(0.1rem);}
+.showTrash > .todo:hover {opacity: 1; filter: blur(0); height: auto;}
+.showTrash > .todo:hover p {opacity: 1; max-height: 20ch;}
 
 
 .showTrash {
@@ -191,10 +195,13 @@ body {
     position: absolute;
     background-color: rgb(0, 0, 0);
     overflow: hidden;
-    bottom:50px;
-    right: 50px;
-    height: 90%;
-    width: 90%;
+    bottom:52px;
+    right: 35px;
+    top:52px;
+    left: 35px;
+    /* height: auto;
+    width: auto; */
+    padding: 5%;
     animation: showTrashAnimation 2s;
     animation-fill-mode: forwards;
 }
@@ -206,10 +213,10 @@ body {
     position: absolute;
     background-color: rgb(0, 0, 0);
     overflow: hidden;
-    bottom:50px;
-    right: 50px;
-    height: 90%;
-    width: 90%;
+    bottom:52px;
+    right: 35px;
+    top:52px;
+    left: 35px;
     animation: hideTrashAnimation 2s;
     animation-fill-mode: forwards;
 }
@@ -218,9 +225,9 @@ body {
 @keyframes hideTrashAnimation {  
     0% {clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);}
 
-    33% {clip-path: polygon(0% 0%, 97% 100%, 100% 100%, 100% 0%);}
+    33% {clip-path: polygon(0% 0%, 98% 100%, 100% 100%, 100% 0%);}
 
-    66% {clip-path: polygon(97% 0%, 97% 100%, 100% 100%, 100% 0%);}
+    66% {clip-path: polygon(98% 0%, 98% 100%, 100% 100%, 100% 0%);}
     
     100% {clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);}
         
@@ -229,9 +236,9 @@ body {
 @keyframes showTrashAnimation { 
     0% {clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);} 
     
-    33% {clip-path: polygon(97% 0%, 97% 100%, 100% 100%, 100% 0%);}
+    33% {clip-path: polygon(98% 0%, 98% 100%, 100% 100%, 100% 0%);}
 
-    66% {clip-path: polygon(0% 0%, 97% 100%, 100% 100%, 100% 0%);}
+    66% {clip-path: polygon(0% 0%, 98% 100%, 100% 100%, 100% 0%);}
     
     100% {clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);}
     
@@ -272,7 +279,7 @@ body {
     border-bottom-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    width: 97%;
+    width: 98%;
     height: 5vh;
     text-align: center;
     background-color: #01394c;

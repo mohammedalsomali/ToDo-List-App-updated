@@ -8,7 +8,6 @@ var userEmail = document.querySelector('.email');
 var dueDate = document.querySelector('.dueDate');
 var trashContainer = document.querySelector('.trash');
 var todosContainer = document.querySelector('.Todos');
-var testing;
 
 
 document.querySelector('.trashBtn').addEventListener('click', showtrashContainer);
@@ -23,7 +22,7 @@ document.addEventListener("click", (e)=> {
 
 document.addEventListener("click", (e)=> {
     if(e.target.classList.value == 'cancelTodo'){
-        removeTodo(e.target.parentNode.parentNode);
+        moveTodototrash(e.target.parentNode.parentNode);
     }
 })
 
@@ -76,15 +75,13 @@ function showtrashContainer() {
         startForm.style.height = '0px';
         todoForm.style.height = '0px';
         todosContainer.style.opacity = 0;
-        // trashContainer.className = 'trash';
-        // trashContainer.style.opacity = 1;
         trashContainer.classList = 'showTrash';
 
 
 
         for(var child of trashContainer.children){
             
-            child.style.width = 'auto';
+            child.style.width = '80%';
             child.style.height = 'auto';
         }
 
@@ -153,10 +150,12 @@ function cancelTodoForm() {
 
 function completeTodo(todo){
     todo.style.background = 'green';
+    const fireworks = new Fireworks.default(todo, {});
+    fireworks.start();
 }
 
 
-function removeTodo(todo) {
+function moveTodototrash(todo) {
 
     trashContainer.appendChild(todo);
    
