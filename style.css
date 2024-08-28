@@ -183,7 +183,7 @@ p {
     overflow: hidden;
 }
 
-.showTrash:hover > .todo {opacity: 0.8; filter: blur(0.1rem);}
+.showTrash:hover .todo:hover ~ .todo {opacity: 0.8; filter: blur(0.1rem);}
 .showTrash > .todo:hover {opacity: 1; filter: blur(0); height: auto;}
 .showTrash > .todo:hover p {opacity: 1; max-height: 20ch;}
 
@@ -393,6 +393,7 @@ button {
 h1 {
     text-transform: uppercase;
     pointer-events: none;
+    padding: 2px;
 }
 
 canvas {

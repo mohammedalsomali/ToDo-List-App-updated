@@ -1,15 +1,15 @@
 
-var todoSubject = document.querySelector('.TodoSubject');
-var startForm = document.querySelector('.startForm');
-var todoForm = document.querySelector('.TodoForm');
-var formSubject = document.querySelector('.subject');
-var todoDiscription= document.querySelector('.discription');
-var userEmail = document.querySelector('.email');
-var dueDate = document.querySelector('.dueDate');
-var trashContainer = document.querySelector('.trash');
-var todosContainer = document.querySelector('.Todos');
-var pageContainer = document.querySelector('.pageContainer');
-var trashBtn = document.querySelector('.trashBtn');
+let todoSubject = document.querySelector('.TodoSubject');
+let startForm = document.querySelector('.startForm');
+let todoForm = document.querySelector('.TodoForm');
+let formSubject = document.querySelector('.subject');
+let todoDiscription= document.querySelector('.discription');
+let userEmail = document.querySelector('.email');
+let dueDate = document.querySelector('.dueDate');
+let trashContainer = document.querySelector('.trash');
+let todosContainer = document.querySelector('.Todos');
+let pageContainer = document.querySelector('.pageContainer');
+let trashBtn = document.querySelector('.trashBtn');
 
 
 trashBtn.addEventListener('click', showtrashContainer);
@@ -24,7 +24,14 @@ document.addEventListener("click", (e)=> {
 
 document.addEventListener("click", (e)=> {
     if(e.target.classList.value == 'cancelTodo'){
-        moveTodototrash(e.target.parentNode.parentNode);
+        if(e.target.parentNode.parentNode.parentNode.className == 'Todos'){
+            moveTodototrash(e.target.parentNode.parentNode);
+        }
+        else{
+            e.target.parentNode.parentNode.remove();
+            trashBtn.value = trashContainer.children.length;
+
+        }
     }
 })
 
@@ -81,7 +88,7 @@ function showtrashContainer() {
 
 
 
-        for(var child of trashContainer.children){
+        for(let child of trashContainer.children){
             
             child.style.width = '80%';
             child.style.height = 'auto';
@@ -97,7 +104,7 @@ function showtrashContainer() {
     startForm.style.opacity = 1;
     todosContainer.style.opacity = 1;
     startForm.style.height = '40px';
-    for(var child of trashContainer.children){
+    for(let child of trashContainer.children){
         
         child.style.overflow = 'hidden';
     }
@@ -113,26 +120,53 @@ function submitTodoForm() {
     todosContainer.style.opacity = 1;
     todosContainer.style.height = 'auto';
     todoForm.style.height = '0px';
-
+    startForm.reset();
     addTodo(formSubject.value, dueDate.value, todoDiscription.value);
 }
 
+
+
+
 function addTodo(subject, duedate, Discription) {
     
-    var newTodo = document.getElementById('todoTemplate').cloneNode(true);
-    newTodo.removeAttribute('id');
-    newTodo.removeAttribute('class');
-    newTodo.classList = 'todo';
-    newTodo.children[0].children[0].innerHTML = subject;
-    newTodo.children[0].children[1].innerHTML = duedate;
-    newTodo.children[2].innerHTML = Discription;
+    let newTodo = document.createElement('div');
+    newTodo.className = 'todo';
+
+    let todoSubjectContainer = document.createElement('div');
+    let todoSubject = document.createElement('h1');
+    todoSubject.innerHTML = subject;
+    let todoDueDate = document.createElement('a');
+    todoDueDate.innerHTML = "DUE "+ duedate;
+    todoSubjectContainer.appendChild(todoSubject);
+    todoSubjectContainer.appendChild(todoDueDate);
+
+    let todoBtnContainer = document.createElement('div');
+    let todoCompleteBtn = document.createElement('button');
+    todoCompleteBtn.className = 'completeTodo';
+    let completeBtnIcon = document.createElement('h1');
+    completeBtnIcon.className = 'bi bi-check-square-fill';
+    todoCompleteBtn.appendChild(completeBtnIcon);
+    let todoCancelBtn = document.createElement('button');
+    todoCancelBtn.className = 'cancelTodo';
+    let cancelBtnIcon = document.createElement('h1');
+    cancelBtnIcon.className = 'bi bi-x-square-fill';
+    todoCancelBtn.appendChild(cancelBtnIcon);
+    todoBtnContainer.appendChild(todoCompleteBtn);
+    todoBtnContainer.appendChild(todoCancelBtn);
+
+    let todoDiscription = document.createElement('p');
+    todoDiscription.innerHTML = Discription;
+
+    newTodo.appendChild(todoSubjectContainer);
+    newTodo.appendChild(todoBtnContainer);
+    newTodo.appendChild(todoDiscription);
+
 
     todosContainer.appendChild(newTodo);
     todosContainer.style.opacity =1;
     
 
 }
-
 
 
 function cancelTodoForm() {
