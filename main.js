@@ -186,6 +186,8 @@ function cancelTodoForm() {
 
 function completeTodo(todo){
     todo.style.background = 'green';
+    todo.style.height = '0px';
+    todo.style.width = '0px';
     const fireworks = new Fireworks.default(pageContainer, {
         decay: {min:0.001, max: 0.05}
     });
