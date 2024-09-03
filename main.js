@@ -3,7 +3,7 @@ let todoSubject = document.querySelector('.TodoSubject');
 let startForm = document.querySelector('.startForm');
 let todoForm = document.querySelector('.TodoForm');
 let formSubject = document.querySelector('.subject');
-let todoDiscription= document.querySelector('.discription');
+let todoDiscription = document.querySelector('.discription');
 let userEmail = document.querySelector('.email');
 let dueDate = document.querySelector('.dueDate');
 let trashContainer = document.querySelector('.trash');
@@ -15,19 +15,32 @@ let trashBtn = document.querySelector('.trashBtn');
 trashBtn.addEventListener('click', showtrashContainer);
 document.querySelector('.cancelBtn').addEventListener('click', cancelTodoForm);
 
-document.addEventListener("click", (e)=> {
-    if(e.target.classList.value == 'completeTodo'){
-        completeTodo(e.target.parentNode.parentNode);
+document.addEventListener("click", (e) => {
+    if (e.target.classList.value == 'completeTodo') {
+        if (e.target.parentNode.parentNode.parentNode.className == 'showTrash') {
+            if (confirm('oops!!! it looks like you are trying to complete a deleted to do.you want to undelete this to do')){
+                todosContainer.appendChild(e.target.parentNode.parentNode);
+                e.target.parentNode.parentNode.style.width = 'auto';
+            }
+            else {
+                return;
+            }
+
+        }
+        else{
+            completeTodo(e.target.parentNode.parentNode);
+
+        }
     }
 })
 
 
-document.addEventListener("click", (e)=> {
-    if(e.target.classList.value == 'cancelTodo'){
-        if(e.target.parentNode.parentNode.parentNode.className == 'Todos'){
+document.addEventListener("click", (e) => {
+    if (e.target.classList.value == 'cancelTodo') {
+        if (e.target.parentNode.parentNode.parentNode.className == 'Todos') {
             moveTodototrash(e.target.parentNode.parentNode);
         }
-        else{
+        else {
             e.target.parentNode.parentNode.remove();
             trashBtn.value = trashContainer.children.length;
 
@@ -38,7 +51,7 @@ document.addEventListener("click", (e)=> {
 // prevent the form from refreshing the page on submit
 document.addEventListener('DOMContentLoaded', (event) => {
     console.log("1");
-    todoForm.addEventListener("submit", function(e) {
+    todoForm.addEventListener("submit", function (e) {
         e.preventDefault(); // Cancel the default action
         submitTodoForm();
     });
@@ -47,30 +60,30 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 // line-24
 document.addEventListener('DOMContentLoaded', (event) => {
-    startForm.addEventListener("submit", function(e) {
+    startForm.addEventListener("submit", function (e) {
         e.preventDefault(); // Cancel the default action
-        openTodoForm(); 
+        openTodoForm();
     });
 });
 
 // show the calender when the date field is clicked and dont allow for due date < today
-dueDate.addEventListener('focus', function(e){
-    
-    this.min= new Date().toISOString().split('T')[0];
+dueDate.addEventListener('focus', function (e) {
+
+    this.min = new Date().toISOString().split('T')[0];
     this.showPicker();
 });
 
 
 
-function openTodoForm(){
+function openTodoForm() {
 
-    if(todoSubject.value === ''){
+    if (todoSubject.value === '') {
         return alert("please add a subject");
     }
     formSubject.value = todoSubject.value;
-    
+
     todoForm.style.height = '30rem';
-    
+
 }
 
 
@@ -78,7 +91,7 @@ function openTodoForm(){
 // trash is where the deleted todos move to
 function showtrashContainer() {
     console.log("before");
-    if(trashContainer.classList == 'hideTrash' || trashContainer.classList == 'trash') {
+    if (trashContainer.classList == 'hideTrash' || trashContainer.classList == 'trash') {
         startForm.style.visibility = 'hidden';
         startForm.style.opacity = 0;
         startForm.style.height = '0px';
@@ -88,24 +101,24 @@ function showtrashContainer() {
 
 
 
-        for(let child of trashContainer.children){
-            
+        for (let child of trashContainer.children) {
+
             child.style.width = '80%';
             child.style.height = 'auto';
         }
 
         return
-    }    
-    
+    }
 
-   
+
+
     trashContainer.classList = 'hideTrash';
     startForm.style.visibility = 'visible';
     startForm.style.opacity = 1;
     todosContainer.style.opacity = 1;
     startForm.style.height = '40px';
-    for(let child of trashContainer.children){
-        
+    for (let child of trashContainer.children) {
+
         child.style.overflow = 'hidden';
     }
 }
@@ -116,7 +129,6 @@ function submitTodoForm() {
 
     startForm.style.visibility = 'visible';
     startForm.style.opacity = 1;
-    startForm.style.height = '40px';
     todosContainer.style.opacity = 1;
     todosContainer.style.height = 'auto';
     todoForm.style.height = '0px';
@@ -128,7 +140,7 @@ function submitTodoForm() {
 
 
 function addTodo(subject, duedate, Discription) {
-    
+
     let newTodo = document.createElement('div');
     newTodo.className = 'todo';
 
@@ -136,7 +148,7 @@ function addTodo(subject, duedate, Discription) {
     let todoSubject = document.createElement('h1');
     todoSubject.innerHTML = subject;
     let todoDueDate = document.createElement('a');
-    todoDueDate.innerHTML = "DUE "+ duedate;
+    todoDueDate.innerHTML = "DUE " + duedate;
     todoSubjectContainer.appendChild(todoSubject);
     todoSubjectContainer.appendChild(todoDueDate);
 
@@ -163,8 +175,8 @@ function addTodo(subject, duedate, Discription) {
 
 
     todosContainer.appendChild(newTodo);
-    todosContainer.style.opacity =1;
-    
+    todosContainer.style.opacity = 1;
+
 
 }
 
@@ -184,20 +196,23 @@ function cancelTodoForm() {
 
 
 
-function completeTodo(todo){
-    document.querySelectorAll('canvas').remove();
+function completeTodo(todo) {
+    document.querySelectorAll('canvas').forEach(element => {
+        element.remove();
+    });
     todo.style.opacity = 0;
-    todo.addEventListener('transitionend', ()=> {
-        todo.remove();}
+    todo.addEventListener('transitionend', () => {
+        todo.remove();
+    }
     );
-    
+
     const fireworks = new Fireworks.default(pageContainer, {
-        decay: {min:0.001, max: 0.05}
+        decay: { min: 0.001, max: 0.05 }
     });
 
     fireworks.launch(45);
-    
-    
+
+
 }
 
 
