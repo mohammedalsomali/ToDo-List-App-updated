@@ -185,14 +185,18 @@ function cancelTodoForm() {
 
 
 function completeTodo(todo){
-    todo.style.background = 'green';
-    todo.style.height = '0px';
-    todo.style.width = '0px';
+    document.querySelectorAll('canvas').remove();
+    todo.style.opacity = 0;
+    todo.addEventListener('transitionend', ()=> {
+        todo.remove();}
+    );
+    
     const fireworks = new Fireworks.default(pageContainer, {
         decay: {min:0.001, max: 0.05}
     });
 
     fireworks.launch(45);
+    
     
 }
 
